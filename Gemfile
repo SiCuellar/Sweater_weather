@@ -39,6 +39,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'geocoder'
+  gem 'fast_jsonapi'
+
 end
 
 group :development do
