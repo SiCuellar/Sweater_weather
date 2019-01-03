@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe 'Geolocation API' do
   it 'sends a successful response' do
-
-    get '/api/v1/forecast?location=denver,co'
+    location = "denver,co"
+    get "/api/v1/forecast?location=#{location}"
 
     expect(response).to be_successful
   end
