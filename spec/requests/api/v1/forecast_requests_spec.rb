@@ -11,7 +11,7 @@ describe 'request' do
     expect(response).to be_successful
   end
 
-  xit 'sends successful daily forecast' do
+  it 'sends successful daily forecast' do
     binding.pry
     expect(response).to be_a(Hash)
     # expect(response).to have_key(:currently)
