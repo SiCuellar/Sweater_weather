@@ -21,7 +21,7 @@ class Daygif
     gif_url =  gif_data[:data][0][:url]
   end
 
-  def get_gif_url_all_days
+  def get_summary_all_days
     darkskyservice = DarkskyService.new
     weather_data = darkskyservice.get_forcast(39.7392358,-104.990251)
 
@@ -31,8 +31,13 @@ class Daygif
     daily_summary = daily_data.map do |day|
       day[:summary]
     end
+
+    all_gifs = daily_summary.map do |summary|
+      gif_data = gif_service.get_gifs(summary)
+      gif_url =  gif_data[:data][0][:url]
+
+    end
   end
 
-  # def 
 
 end
