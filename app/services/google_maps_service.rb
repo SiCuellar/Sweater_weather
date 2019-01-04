@@ -1,6 +1,6 @@
 class GoogleMapsService
 
-  def find_coordinates(location)
+  def get_coordinates(location)
     get_json("/maps/api/geocode/json?address=#{location}&key=#{ENV["GOOGLE_MAPS_KEY"]}")[:results][0][:geometry][:location]
   end
 
@@ -13,7 +13,6 @@ class GoogleMapsService
 
   def conn
     @conn = Faraday.new(url: "https://maps.googleapis.com") do |faraday|
-      # faraday.headers["X-API-Key"] = ENV["GOOGLE_MAPS_KEY"]
       faraday.adapter  Faraday.default_adapter
     end
   end
