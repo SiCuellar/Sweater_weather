@@ -1,5 +1,35 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+
+require 'rspec/rails'
+require 'vcr'
+require 'webmock/rspec'
+require 'securerandom'
+
+VCR.configure do |config|
+  config.ignore_localhost = true
+  config.cassette_library_dir = 'spec/cassettes'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.filter_sensitive_data("<DARK_SKY_KEY>") { ENV['DARK_SKY_KEY'] }
+  config.allow_http_connections_when_no_cassette = true
+  config.filter_sensitive_data("<GOOGLE_MAPS_KEY>") { ENV['GOOGLE_MAPS_KEY']}
+end
+
+Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
+
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
