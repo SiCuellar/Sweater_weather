@@ -33,7 +33,7 @@ RSpec.describe Daygif, type: :model do
     gif_url = @gifday_data.get_current_day_gif_url
 
     expect(gif_url).to be_a(String)
-    expect(gif_url).to eq("https://giphy.com/gifs/dark-castle-63xBFHKNVjZlu")
+    expect(gif_url).to eq("https://giphy.com/gifs/pretty-sky-gorgeous-alEGxmahCCywE")
   end
 
   it "can return a all days gif Url" do
