@@ -28,4 +28,17 @@ RSpec.describe Daygif, type: :model do
     expect(weather_data).to have_key(:daily)
   end
 
+  it "can return a gif Url based on summary " do
+    location = "denver,co"
+    gif_url = @gifday_data.get_current_day_gif_url
+
+    expect(gif_url).to be_a(String)
+    expect(gif_url).to eq("https://giphy.com/gifs/dark-castle-63xBFHKNVjZlu")
+  end
+
+  it "can return a all days gif Url" do
+    gif_url = @gifday_data.get_gif_url_all_days
+
+    expect(gif_url).to be_a(Array)
+  end
 end
