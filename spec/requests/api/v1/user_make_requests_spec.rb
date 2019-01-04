@@ -2,16 +2,27 @@ require 'rails_helper'
 
 describe 'user request' do
 
+    it 'exists' do
+      headers = { "Content_Type" => "application/json", "Accept" => "application/json" }
 
-  it 'posts a new user' do
-    headers = { "Content_Type" => "application/json", "Accept" => "application/json" }
+      post "/api/v1/users", :params => {"email"=>"whatever@example.com",
+         "password"=>"password",
+         "password_confirmation"=>"password",
+         "controller"=>"api/v1/users",
+         "action"=>"create",
+         "user"=>{"email"=>"whatever@example.com"}}, :headers => headers
 
-    post "/api/v1/users", :params => { "user": {"email"=>"whatever@example.com",
-                  "password"=>"password",
-                  "password_confirmation"=>"password"}}, :headers => headers
+      expect(request.params.keys).to include("user")
+      expect(request.params.keys).to include("email")
+      expect(request.params.keys).to include("password")
+      expect(request.params.keys).to include("password_confirmation")
 
-    expect(response).to be_successful
-    expect(response).to eq({"api_key": "jgn983hy48thw9begh98h4539h4",})
-  end
+      expect(response).to be_successful
+
+      parsed_response = JSON.parse(response.body)
+
+      expect(parsed_response).to have_key("api_key")
+
+    end
 
 end
