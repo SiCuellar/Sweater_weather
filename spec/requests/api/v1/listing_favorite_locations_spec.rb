@@ -2,7 +2,11 @@ require "rails_helper"
 
 describe 'request' do
   it 'exists' do
-    user = User.create(email: 'whatever@example.com', password: 'password', api_key: 'ilikedogs')
+    user_1 = User.create(email: 'whatever@example.com', password: 'password', api_key: 'ilikedogs')
+    fav_city_1 =Favorite.create(location: 'denver, CO')
+    fav_city_2 =Favorite.create(location: 'Los Angeles, CA')
+    user_1.user_favorites.create(favorite_id: fav_city_1.id)
+    user_1.user_favorites.create(favorite_id: fav_city_2.id)
 
     headers = { "Content_Type" => "application/json", "Accept" => "application/json" }
 
