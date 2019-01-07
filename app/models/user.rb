@@ -4,6 +4,10 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :user_favorites
+  has_many :favorites , through: :user_favorites
+
+
   def self.create_user(params)
     user_info = {}
     user_info[:email] = params["email"]

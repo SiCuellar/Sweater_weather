@@ -4,7 +4,6 @@ describe "user login" do
   it 'user login requset returns a user specific key' do
     user = User.create(email: 'whatever@example.com', password: 'password')
 
-
     headers = { "Content_Type" => "application/json", "Accept" => "application/json" }
 
     post "/api/v1/sessions", :params => {
@@ -21,8 +20,6 @@ describe "user login" do
     parsed_response = JSON.parse(response.body)
 
     expect(parsed_response).to have_key("api_key")
-
-
   end
 
 end
