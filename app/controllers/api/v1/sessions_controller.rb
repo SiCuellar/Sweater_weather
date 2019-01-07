@@ -7,4 +7,10 @@ class Api::V1::SessionsController < ApplicationController
     render json: response
   end
 
+  # private
+  #
+  # def session_params
+  #   params.permit(:email, :password, :password_confirmation)
+  # end
+
 end
