@@ -6,6 +6,6 @@ class Api::V1::ForecastController < ApplicationController
     gif_helper.get_daily_summary
 
     binding.pry
-    render json: weather
+    render json: ForecastSerializer.new(Forecast.all)
   end
 end
