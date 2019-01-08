@@ -5,7 +5,8 @@ class Api::V1::ForecastController < ApplicationController
     gif_helper = GiphyDataHelper.new(weather)
     gif_helper.get_daily_summary
 
-    binding.pry
-    render json: ForecastSerializer.new(Forecast.all)
+    # binding.pry
+    # render json: ForecastSerializer.new(Forecast.all)
+    render json: weather
   end
 end

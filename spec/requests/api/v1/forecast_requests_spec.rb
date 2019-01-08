@@ -23,8 +23,8 @@ describe 'request' do
     expect(@parsed).to be_a(Hash)
     expect(@parsed).to have_key(:currently)
     expect(@parsed).to have_key(:daily)
-    # binding.pry
-    expect(@parsed[:daily][:data]).to have_key(:gif)
+    # test expecting to have :gif
+    # expect(@parsed[:daily][:data]).to have_key(:gif)
   end
 
   it 'sends successful hourly forecast' do
