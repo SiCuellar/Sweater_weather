@@ -18,7 +18,6 @@ class WeatherDataHelper
 
   def most_current_weather
     CurrentWeather.new(@weather_data)
-    # binding.pry
   end
 
   def daily_weather

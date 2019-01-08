@@ -1,14 +1,14 @@
-class CurrentWeather
+class DayWeather
   attr_reader :time,
               :summary,
-              :precip,
+              :precipertation,
               :temp,
               :humidity,
               :uv_index,
               :visibility
 
   def initialize(weather_data)
-    @time = weather_data[:currently][:time]
+    @time = weather_data[:daily][:time]
     @summary = weather_data[:currently][:summary]
     @precipertation = weather_data[:currently][:precipProbability]
     @temp = weather_data[:currently][:temperature]
