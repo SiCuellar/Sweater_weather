@@ -13,14 +13,14 @@ class WeatherDataHelper
   end
 
   def current_weather
-    @weather_data[:currently]
+    CurrentWeather.new(@weather_data)
   end
 
   def daily_weather
-    @weather_data[:daily]
+    DailyWeather.new(@weather_data)
   end
 
   def hourly_weather
-    @weather[:hourly]
+    HourlyWeather.new(@weather_data)
   end
 end
