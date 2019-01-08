@@ -7,8 +7,7 @@ class DayWeather
               :temp_low,
               :visibility
 
-  def initialize(day_weater_data)
-    # binding.pry
+  def initialize(day_weather_data)
     @time = day_weather_data[:time]
     @summary = day_weather_data[:summary]
     @icon = day_weather_data[:icon]

@@ -1,19 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe DayWeather, type: :model do
-  # VCR.use_cassette("weather_casette") do
     it "it can return weather information for a day " do
-      weather_data = WeatherDataHelper.new("Denver, Co")
-      current_weather = weather_data.day_weather
+      weather = {:time=>1546930800,
+                :summary=>"Partly cloudy in the morning.",
+                :icon=>"partly-cloudy-day",
+                :precipProbability=>0.01,
+                :temperatureHigh=>45.4,
+                :temperatureLow=>27.71,
+                :visibility=>10}
 
-      expect(current_weather).to be_an_instance_of(CurrentWeather)
-      expect(current_weather.visibility).to eq(10)
-      expect(current_weather.summary).to eq("Clear")
-      expect(current_weather.precipertation).to eq(0)
-      expect(current_weather.temp).to eq(46.95)
-      expect(current_weather.humidity).to eq(0.28)
-      expect(current_weather.uv_index).to eq(1)
-      expect(current_weather.visibility).to eq(10)
+      subject = DayWeather.new(weather)
+
+      expect(subject).to be_an_instance_of(DayWeather)
+      expect(subject.time).to be_an_instance_of(Integer)
+      expect(subject.summary).to be_an_instance_of(String)
+      expect(subject.icon).to be_an_instance_of(String)
+      expect(subject.precip).to be_an_instance_of(Float)
+      expect(subject.temp_high).to be_an_instance_of(Float)
+      expect(subject.temp_low).to be_an_instance_of(Float)
     end
-  # end
 end
