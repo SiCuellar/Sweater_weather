@@ -2,11 +2,20 @@ class Api::V1::FavoritesController < ApplicationController
   def index
     user = User.find_by(api_key: params[:api_key])
     if user
-      user.favorites.each do |fav|
-        fav[:location]
-        
-        binding.pry
+        fav_data = user.favorites.map do |fav|
+        google_data = GoogleMapsService.new
+        coordinates = google_data.get_coordinates(fav[:location])
+        darkskyservice = DarkskyService.new
+        weather_data = darkskyservice.get_forcast(coordinates[:lat], coordinates[:lng])
+        data = Hash.new
+        current_weather = {current_weather: weather_data[:currently]}
+        location = {location: fav[:location]}
+        data.merge!(location)
+        data.merge!(current_weather)
+        data
       end
+      render json: fav_data, status: 200 
+
     else
       render :status => 401
     end
