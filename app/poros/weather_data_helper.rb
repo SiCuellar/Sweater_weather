@@ -12,7 +12,7 @@ class WeatherDataHelper
     @weather_data
   end
 
-  def current_weather
+  def most_current_weather
     CurrentWeather.new(@weather_data)
   end
 
