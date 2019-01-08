@@ -8,9 +8,10 @@ class GiphyDataHelper
 
   def get_summary
     days = @weather_data[:daily][:data]
-    summaries = days.map do |day|
+    summs = days.map do |day|
       gif_info = @gif_service.get_gifs(day[:summary])
       gif_info[:data][0][:url]
     end
+    
   end
 end

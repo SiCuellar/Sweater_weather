@@ -4,6 +4,7 @@ class Api::V1::ForecastController < ApplicationController
     weather = weather_helper.weather_data
     gif_helper = GiphyDataHelper.new(weather)
     gif_helper.get_summary
+
     render json: weather
   end
 end
