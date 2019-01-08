@@ -22,11 +22,15 @@ class WeatherDataHelper
 
   def daily_weather
     days_weather = @weather_data[:daily][:data]
-    # binding.pry
-    DayWeather.new(@weather_data)
+    all_days = days_weather.map do |day_data|
+      DayWeather.new(day_data)
+    end
   end
 
   def hourly_weather
-    HourlyWeather.new(@weather_data)
+    hours_weather = @weather_data[:hourly][:data]
+    all_hours = hours_weather.map do |hour_data|
+      HourWeather.new(hour_data)
+    end.first(8)
   end
 end

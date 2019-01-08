@@ -19,7 +19,7 @@ describe 'request' do
   end
 
   it 'sends successful daily forecast' do
-
+    # binding.pry
     expect(@parsed).to be_a(Hash)
     expect(@parsed).to have_key(:currently)
     expect(@parsed).to have_key(:daily)

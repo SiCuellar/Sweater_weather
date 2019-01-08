@@ -1,13 +1,14 @@
 class DayWeather
   attr_reader :time,
               :summary,
-              :icon,
               :precip,
               :temp_high,
               :temp_low,
-              :visibility
+              :visibility,
+              :icon
 
   def initialize(day_weather_data)
+    # binding.pry
     @time = day_weather_data[:time]
     @summary = day_weather_data[:summary]
     @icon = day_weather_data[:icon]

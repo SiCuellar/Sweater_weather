@@ -15,7 +15,7 @@ RSpec.describe DayWeather, type: :model do
       expect(subject).to be_an_instance_of(DayWeather)
       expect(subject.time).to be_an_instance_of(Integer)
       expect(subject.summary).to be_an_instance_of(String)
-      expect(subject.icon).to be_an_instance_of(String)
+      expect(subject.icon).to eq("partly-cloudy-day")
       expect(subject.precip).to be_an_instance_of(Float)
       expect(subject.temp_high).to be_an_instance_of(Float)
       expect(subject.temp_low).to be_an_instance_of(Float)
