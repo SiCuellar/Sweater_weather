@@ -12,8 +12,13 @@ class WeatherDataHelper
     @weather_data
   end
 
+  def current_weather
+    @weather_data[:currently]
+  end
+
   def most_current_weather
     CurrentWeather.new(@weather_data)
+    # binding.pry
   end
 
   def daily_weather
