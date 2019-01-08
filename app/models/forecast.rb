@@ -1,3 +1,3 @@
 class Forecast < ApplicationRecord
-  attr_accessor :current, :daily, :daily
+  attr_accessor :current, :daily, :hourly
 end
