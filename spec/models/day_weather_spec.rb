@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe DailyWeather, type: :model do
+RSpec.describe DayWeather, type: :model do
   # VCR.use_cassette("weather_casette") do
-    it "it can return Hourly weather information " do
+    it "it can return weather information for a day " do
       weather_data = WeatherDataHelper.new("Denver, Co")
-      current_weather = weather_data.daily_weather
+      current_weather = weather_data.day_weather
 
       expect(current_weather).to be_an_instance_of(CurrentWeather)
       expect(current_weather.visibility).to eq(10)

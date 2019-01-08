@@ -21,7 +21,9 @@ class WeatherDataHelper
   end
 
   def daily_weather
-    DailyWeather.new(@weather_data)
+    days_weather = @weather_data[:daily][:data]
+    # binding.pry
+    DayWeather.new(@weather_data)
   end
 
   def hourly_weather
