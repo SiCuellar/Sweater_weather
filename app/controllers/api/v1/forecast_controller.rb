@@ -1,9 +1,7 @@
 class Api::V1::ForecastController < ApplicationController
   def show
-    google_data = GoogleMapsService.new
-    coordinates = google_data.get_coordinates(params[:location])
-    darkskyservice = DarkskyService.new
-    weather_data = darkskyservice.get_forcast(coordinates[:lat], coordinates[:lng])
-    render json: weather_data
+    weather_helper = WeatherDataHelper.new(params[:location])
+    weather = weather_helper.weather_data
+    render json: weather
   end
 end
