@@ -31,6 +31,6 @@ describe 'request' do
        "action"=>"create",
        "user"=>{"email"=>"whatever@example.com"}}, :headers => headers
 
-    expect(response.status).to eq(404)
+    expect(response.status).to eq(401)
   end
 end

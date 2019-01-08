@@ -1,12 +1,34 @@
 class Api::V1::FavoritesController < ApplicationController
+  def index
+    user = User.find_by(api_key: params[:api_key])
+    if user
+        fav_data = user.favorites.map do |fav|
+        google_data = GoogleMapsService.new
+        coordinates = google_data.get_coordinates(fav[:location])
+        darkskyservice = DarkskyService.new
+        weather_data = darkskyservice.get_forcast(coordinates[:lat], coordinates[:lng])
+        data = Hash.new
+        current_weather = {current_weather: weather_data[:currently]}
+        location = {location: fav[:location]}
+        data.merge!(location)
+        data.merge!(current_weather)
+        data
+      end
+      render json: fav_data, status: 200 
+
+    else
+      render :status => 401
+    end
+  end
+
   def create
     user = User.find_by(api_key: params[:api_key])
     if user
-      fav_location = Favorite.find_or_create_by(location: params[:location])
+      fav_location = Favorite.find_or_create_by(location: params[:location].split.join.downcase)
       user.user_favorites.create(favorite_id: fav_location.id)
       render json: "Good Job", status: 204
     else
-      render :status => 404
+      render :status => 401
     end
   end
 end
