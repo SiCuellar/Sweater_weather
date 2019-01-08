@@ -6,7 +6,7 @@ describe GiphyService do
       service = GiphyService.new
       summary = "Clear_throughout_the_day"
       gif_data = service.get_gifs(summary)
-
+      # binding.pry
       expect(service).to be_an_instance_of(GiphyService)
 
       expect(gif_data).to be_a(Hash)
