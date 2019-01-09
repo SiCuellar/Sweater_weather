@@ -21,7 +21,7 @@ describe 'request' do
 
     expect(response).to be_successful
     expect(response.status).to eq(204)
-    expect(Favorite.count).to eq(1)
+    expect(Favorite.count).to eq(2)
   end
 
   it 'it returns an error when its the wrong api_key' do
@@ -43,6 +43,6 @@ describe 'request' do
     expect(request.params.keys).to include("location")
 
     expect(response.status).to eq(401)
-    expect(Favorite.count).to eq(2)
+    expect(Favorite.count).to eq(3)
   end
 end

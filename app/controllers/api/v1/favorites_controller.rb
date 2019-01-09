@@ -9,7 +9,6 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def create
-    binding.pry
     user = User.find_by(api_key: params[:api_key])
     if user
       fav_location = Favorite.find_or_create_by(location: params[:location].split.join.downcase)
