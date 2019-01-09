@@ -30,19 +30,3 @@ class Api::V1::FavoritesController < ApplicationController
     end
   end
 end
-
-
-# user.favorites.each do |fav|
-#   FavoriteDataHelper.new(fav)
-# end
-
-# fav_data = user.favorites.map do |fav|
-#   weather_helper = WeatherDataHelper.new(fav[:location])
-#   data = Hash.new
-#   current_weather = {current_weather: weather_helper.current_weather}
-#   location = {location: fav[:location]}
-#   data.merge!(location)
-#   data.merge!(current_weather)
-#   data
-# end
-# render json: fav_data, status: 200
