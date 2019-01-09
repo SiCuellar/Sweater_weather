@@ -15,5 +15,7 @@ class DayWeather
     @temp_high = day_weather_data[:temperatureHigh]
     @temp_low = day_weather_data[:temperatureLow]
     @visibility = day_weather_data[:visibility]
+    giphy_s = GiphyDataHelper.new
+    @gif_url = giphy_s.get_summary(@summary)
   end
 end

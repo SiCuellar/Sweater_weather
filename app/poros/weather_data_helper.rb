@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 class WeatherDataHelper
+  attr_reader :location
   def initialize(location)
+    @location = location
     google_data = GoogleMapsService.new
     coordinates = google_data.get_coordinates(location)
     darkskyservice = DarkskyService.new
@@ -24,7 +26,7 @@ class WeatherDataHelper
     days_weather = @weather_data[:daily][:data]
     all_days = days_weather.map do |day_data|
       DayWeather.new(day_data)
-    end
+    end.first(8)
   end
 
   def hourly_weather

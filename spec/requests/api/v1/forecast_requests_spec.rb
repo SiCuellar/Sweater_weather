@@ -19,16 +19,20 @@ describe 'request' do
   end
 
   it 'sends successful daily forecast' do
-    # binding.pry
     expect(@parsed).to be_a(Hash)
-    expect(@parsed).to have_key(:currently)
-    expect(@parsed).to have_key(:daily)
-    # test expecting to have :gif, need to make serializers
-    # expect(@parsed[:daily][:data]).to have_key(:gif)
+    expect(@parsed[:data][:attributes]).to have_key(:daily_weather)
+    expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:time)
+    expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:summary)
+    expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:icon)
+    # binding.pry
+    expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:gif_url)
   end
 
   it 'sends successful hourly forecast' do
     expect(@parsed).to be_a(Hash)
-    expect(@parsed).to have_key(:hourly)
+    expect(@parsed[:data][:attributes]).to have_key(:daily_weather)
+    expect(@parsed[:data][:attributes][:hourly_weather][0]).to have_key(:time)
+    expect(@parsed[:data][:attributes][:hourly_weather][0]).to have_key(:summary)
+    expect(@parsed[:data][:attributes][:hourly_weather][0]).to have_key(:icon)
   end
 end
