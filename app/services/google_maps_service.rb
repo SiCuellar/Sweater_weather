@@ -1,5 +1,4 @@
 class GoogleMapsService
-
   def get_coordinates(location)
     get_json("/maps/api/geocode/json?address=#{location}&key=#{ENV["GOOGLE_MAPS_KEY"]}")[:results][0][:geometry][:location]
   end

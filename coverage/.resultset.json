@@ -169,8 +169,6 @@
       ],
       "/Users/Silver/turing/3module/turing_project/Sweater_weather/app/poros/weather_data_helper.rb": [
         1,
-        null,
-        1,
         1,
         1,
         4,
@@ -208,8 +206,6 @@
         null
       ],
       "/Users/Silver/turing/3module/turing_project/Sweater_weather/app/poros/giphy_data_helper.rb": [
-        1,
-        null,
         1,
         1,
         25,
@@ -278,8 +274,6 @@
       ],
       "/Users/Silver/turing/3module/turing_project/Sweater_weather/app/poros/favorite_data_helper.rb": [
         1,
-        null,
-        1,
         1,
         null,
         1,
@@ -336,6 +330,6 @@
         0
       ]
     },
-    "timestamp": 1547055962
+    "timestamp": 1547063898
   }
 }
