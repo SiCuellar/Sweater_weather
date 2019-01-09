@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class FavoriteDataHelper
   attr_reader :user_id
 

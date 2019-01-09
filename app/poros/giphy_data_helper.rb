@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class GiphyDataHelper
   def get_summary(summary)
     service = GiphyService.new
