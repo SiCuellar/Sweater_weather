@@ -16,11 +16,21 @@ class WeatherDataHelper
     @weather_data[:currently]
   end
 
+  def most_current_weather
+    CurrentWeather.new(@weather_data)
+  end
+
   def daily_weather
-    @weather_data[:daily]
+    days_weather = @weather_data[:daily][:data]
+    all_days = days_weather.map do |day_data|
+      DayWeather.new(day_data)
+    end
   end
 
   def hourly_weather
-    @weather[:hourly]
+    hours_weather = @weather_data[:hourly][:data]
+    all_hours = hours_weather.map do |hour_data|
+      HourWeather.new(hour_data)
+    end.first(8)
   end
 end
