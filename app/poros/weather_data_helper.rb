@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class WeatherDataHelper
   attr_reader :location
   def initialize(location)
