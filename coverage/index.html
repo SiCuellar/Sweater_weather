@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:12:06-07:00">2019-01-09T10:12:06-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:32:18-07:00">2019-01-09T10:32:18-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -123,7 +123,7 @@
       <tr>
         <td class="strong"><a href="#25a8b36e9b1ba634d11ace0f1f1fd843442b49b1" class="src_link" title="app/models/day_weather.rb">app/models/day_weather.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>22</td>
+        <td>21</td>
         <td>12</td>
         <td>12</td>
         <td>0</td>
@@ -183,7 +183,7 @@
       <tr>
         <td class="strong"><a href="#a931df76e50ae20a2868d3e9ba722379287aaa57" class="src_link" title="app/poros/favorite_data_helper.rb">app/poros/favorite_data_helper.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
+        <td>25</td>
         <td>18</td>
         <td>18</td>
         <td>0</td>
@@ -203,7 +203,7 @@
       <tr>
         <td class="strong"><a href="#ea5186a7477211959ca1369910e981566b39ac38" class="src_link" title="app/poros/weather_data_helper.rb">app/poros/weather_data_helper.rb</a></td>
         <td class="green strong">91.3 %</td>
-        <td>39</td>
+        <td>38</td>
         <td>23</td>
         <td>21</td>
         <td>2</td>
@@ -408,7 +408,7 @@
       <tr>
         <td class="strong"><a href="#25a8b36e9b1ba634d11ace0f1f1fd843442b49b1" class="src_link" title="app/models/day_weather.rb">app/models/day_weather.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>22</td>
+        <td>21</td>
         <td>12</td>
         <td>12</td>
         <td>0</td>
@@ -653,7 +653,7 @@
       <tr>
         <td class="strong"><a href="#a931df76e50ae20a2868d3e9ba722379287aaa57" class="src_link" title="app/poros/favorite_data_helper.rb">app/poros/favorite_data_helper.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
+        <td>25</td>
         <td>18</td>
         <td>18</td>
         <td>0</td>
@@ -673,7 +673,7 @@
       <tr>
         <td class="strong"><a href="#ea5186a7477211959ca1369910e981566b39ac38" class="src_link" title="app/poros/weather_data_helper.rb">app/poros/weather_data_helper.rb</a></td>
         <td class="green strong">91.3 %</td>
-        <td>39</td>
+        <td>38</td>
         <td>23</td>
         <td>21</td>
         <td>2</td>
@@ -1474,61 +1474,55 @@
           <code class="ruby">    @summary = day_weather_data[:summary].gsub(/[^0-9a-z ]/i, &#39;&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">    # binding.pry</code>
-        </li>
-      
-        <li class="covered" data-hits="25" data-linenumber="14">
+        <li class="covered" data-hits="25" data-linenumber="13">
           <span class="hits">25</span>
           
           <code class="ruby">    @icon = day_weather_data[:icon]</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="15">
+        <li class="covered" data-hits="25" data-linenumber="14">
           <span class="hits">25</span>
           
           <code class="ruby">    @precip = day_weather_data[:precipProbability]</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="16">
+        <li class="covered" data-hits="25" data-linenumber="15">
           <span class="hits">25</span>
           
           <code class="ruby">    @temp_high = day_weather_data[:temperatureHigh]</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="17">
+        <li class="covered" data-hits="25" data-linenumber="16">
           <span class="hits">25</span>
           
           <code class="ruby">    @temp_low = day_weather_data[:temperatureLow]</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="18">
+        <li class="covered" data-hits="25" data-linenumber="17">
           <span class="hits">25</span>
           
           <code class="ruby">    @visibility = day_weather_data[:visibility]</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="19">
+        <li class="covered" data-hits="25" data-linenumber="18">
           <span class="hits">25</span>
           
           <code class="ruby">    giphy_s = GiphyDataHelper.new</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="20">
+        <li class="covered" data-hits="25" data-linenumber="19">
           <span class="hits">25</span>
           
           <code class="ruby">    @gif_url = giphy_s.get_summary(@summary)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
@@ -1966,121 +1960,115 @@
           <code class="ruby">  def initialize(user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">    # binding.pry</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">    @user_id = user.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">    @user = user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    @favs = user.favorites</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">    @google_data = GoogleMapsService.new</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">    @darkskyservice = DarkskyService.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">  def body</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">   data = {}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">    location = @favs.map do |fav|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
+        <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
           <code class="ruby">     loc = {location: fav.location}</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="19">
+        <li class="covered" data-hits="2" data-linenumber="18">
           <span class="hits">2</span>
           
           <code class="ruby">     data.merge!(loc)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
+        <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
           <code class="ruby">     coordinates = @google_data.get_coordinates(fav.location)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
+        <li class="covered" data-hits="2" data-linenumber="20">
           <span class="hits">2</span>
           
           <code class="ruby">     weather = @darkskyservice.get_forcast(coordinates[:lat],coordinates[:lng])[:currently]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
+        <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
           <code class="ruby">     current = {current_weather: weather}</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
+        <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
           <code class="ruby">     data.merge!(current)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
@@ -2334,73 +2322,67 @@
           <code class="ruby">    all_days = days_weather.map do |day_data|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">      # binding.pry</code>
-        </li>
-      
-        <li class="covered" data-hits="24" data-linenumber="29">
+        <li class="covered" data-hits="24" data-linenumber="28">
           <span class="hits">24</span>
           
           <code class="ruby">      DayWeather.new(day_data)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">    end.first(8)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def hourly_weather</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="34">
+        <li class="covered" data-hits="3" data-linenumber="33">
           <span class="hits">3</span>
           
           <code class="ruby">    hours_weather = @weather_data[:hourly][:data]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="35">
+        <li class="covered" data-hits="3" data-linenumber="34">
           <span class="hits">3</span>
           
           <code class="ruby">    all_hours = hours_weather.map do |hour_data|</code>
         </li>
       
-        <li class="covered" data-hits="147" data-linenumber="36">
+        <li class="covered" data-hits="147" data-linenumber="35">
           <span class="hits">147</span>
           
           <code class="ruby">      HourWeather.new(hour_data)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">    end.first(8)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">end</code>

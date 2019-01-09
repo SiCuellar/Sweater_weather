@@ -4,7 +4,6 @@ class FavoriteDataHelper
   attr_reader :user_id
 
   def initialize(user)
-    # binding.pry
     @user_id = user.id
     @user = user
     @favs = user.favorites
