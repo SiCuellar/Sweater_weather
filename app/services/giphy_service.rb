@@ -7,6 +7,7 @@ class GiphyService
   private
 
   def get_json(path)
+    # binding.pry
     response = conn.get(path)
     JSON.parse(response.body, symbolize_names: true)
   end
