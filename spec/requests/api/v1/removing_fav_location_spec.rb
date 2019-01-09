@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe 'request' do
-  it 'it returns a users favorites cities' do
+  it 'it removes a city from users favorites' do
     user_1 = User.create(email: 'whatever@example.com', password: 'password', api_key: 'ilikedogs')
     fav_city_1 =Favorite.create(location: 'Denver, CO')
     fav_city_2 =Favorite.create(location: 'Los Angeles, CA')
@@ -24,7 +24,7 @@ describe 'request' do
     expect(Favorite.count).to eq(1)
   end
 
-  it 'it returns a users favorites cities' do
+  it 'it returns an error when its the wrong api_key' do
     user_1 = User.create(email: 'whatever@example.com', password: 'password', api_key: 'ilikedogs')
     fav_city_1 =Favorite.create(location: 'Denver, CO')
     fav_city_2 =Favorite.create(location: 'Los Angeles, CA')

@@ -3,6 +3,7 @@ class Api::V1::FavoritesController < ApplicationController
     user = User.find_by(api_key: params[:api_key])
     if user
         x = FavoriteDataHelper.new(user)
+        x.location
         # user.favorites.each do |fav|
         #   FavoriteDataHelper.new(fav)
         # end
@@ -18,7 +19,6 @@ class Api::V1::FavoritesController < ApplicationController
         # end
       # render json: fav_data, status: 200
       render json: FavoritesSerializer.new(FavoriteDataHelper.new(user))
-    end
 
     else
       render :status => 401
