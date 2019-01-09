@@ -1,7 +1,7 @@
 class GiphyService
 
-  def get_gifs(summary)
-    get_json("/v1/gifs/search?q=#{summary}&api_key=#{ENV["GIPHY_KEY"]}&limit=1")
+  def get_gif_url(summary)
+    get_json("/v1/gifs/search?q=#{summary}&api_key=#{ENV["GIPHY_KEY"]}&limit=1")[:data][0][:embed_url]
   end
 
   private
