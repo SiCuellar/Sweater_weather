@@ -9,7 +9,7 @@ class DayWeather
 
   def initialize(day_weather_data)
     @time = day_weather_data[:time]
-    @summary = day_weather_data[:summary]
+    @summary = day_weather_data[:summary].gsub(/[^0-9a-z ]/i, '')
     @icon = day_weather_data[:icon]
     @precip = day_weather_data[:precipProbability]
     @temp_high = day_weather_data[:temperatureHigh]

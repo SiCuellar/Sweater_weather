@@ -10,7 +10,9 @@ describe 'request' do
     .to_return(body: File.read("./spec/fixtures/darksky_map.json"))
 
     location = "denver,co"
-    get "/api/v1/forecast?location=#{location}"
+    VCR.use_cassette("giphy_casette_fix") do
+      get "/api/v1/forecast?location=#{location}"
+    end
     @parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
@@ -24,7 +26,6 @@ describe 'request' do
     expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:time)
     expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:summary)
     expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:icon)
-    # binding.pry
     expect(@parsed[:data][:attributes][:daily_weather][0]).to have_key(:gif_url)
   end
 
