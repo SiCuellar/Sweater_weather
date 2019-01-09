@@ -8,7 +8,6 @@ class DayWeather
               :icon
 
   def initialize(day_weather_data)
-    # binding.pry
     @time = day_weather_data[:time]
     @summary = day_weather_data[:summary]
     @icon = day_weather_data[:icon]
